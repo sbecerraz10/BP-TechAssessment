@@ -1,0 +1,5 @@
+1. First of all run 192.168.1.7:5000/login with {"name" : "Lorde", "password": "Team"} as raw data 
+(Remember to put the X-Parse-REST-API-Key in headers, the JWT is not needed at the time, this endpoint is gonna return us the JWT)
+2. Being in the request 192.168.1.7:5000/DevOps. Copy the JWT access token to bearer token in postman.
+3. Then, raw data --> {"message" : "This is a test", "to": "Juan Perez","from": "Rita Asturia","timeToLifeSec" : 45}
+4. Run the request and see the response :)
