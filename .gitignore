@@ -1,1 +1,4 @@
 bp-env
+# Ignore generated files
+**/__pycache__/ 
+ *.pyc

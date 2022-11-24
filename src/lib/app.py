@@ -61,6 +61,13 @@ def health():
 def method_not_allowed(error):
     return "ERROR", 405
 
+def me(number1, number2):
+    if number1 == number2:
+        return True
+    else: 
+        return False
+
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
