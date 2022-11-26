@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: 'development']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sbecerraz10/BP-TechAssessment.git']]])
+            }
+        }
+        stage('Build') {
+            steps {
+                git branch: 'development', url: 'https://github.com/sbecerraz10/BP-TechAssessment.git'
+                sh 'python ./src/lib/app.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'python -m pytest'
+            }
+        }
+    }
+}

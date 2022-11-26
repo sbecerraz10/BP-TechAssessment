@@ -2,14 +2,16 @@ version: '3.9'
 
 services:
   bp-app:
-    container_name: bp-app
     image: sbecerraz10/bpapp:5.0
     build: .
-    ports:
-      - "80:8080"
     restart: always
-    networks:
-      - webNet
+    
+  
+  nginx:
+    image: nginx:latest
+    build: nginx/conf.d
+    ports:
+      - 80:80
+    depends_on:
+      - bp-app
 
-networks:
-  webNet:
